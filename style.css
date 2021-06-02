@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-dark .navbar-brand {
+    color: #fff;
+    margin-left: 40%;
+}
+
+
+/* city input and button */
+
+
+/* search container */
+
+.search-container {
+    outline-style: solid;
+}
+
+
+/* current location info */
+
+.container {
+    justify-content: flex-end;
+}
+
+
+/* past search history */
