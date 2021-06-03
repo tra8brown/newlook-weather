@@ -11,30 +11,86 @@
 </head>
 
 <body>
+    <style>
+        body {
+            background-image: url('./unsplash.png');
+        }
+    </style>
     <!-- weather dashboard -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light">
-        <a class="navbar-brand text-justfy">Weather Dashboard</a>
+        <a class="navbar-brand text-justify">Weather Dashboard</a>
     </nav>
     <!-- search for city input and button -->
-    <div class="card w-25">
-        <div class="card-body">
-            <h2 class="card-title">Search for a City:</h2>
-            <input id="location" type="text" class="text-input form-control"><br>
-            <button id="search-btn" class="btn btn-outline-secondary btn-block saveBtn">Search</button>
+    <div class="row clearfix">
+        <div class="col-sml-4">
+            <div class="card-body">
+                <h2 class="card-title">Search for a City:</h2>
+                <input id="location" type="text" class="text-input form-control"><br>
+                <button id="search-btn" class="btn btn-outline-secondary btn-block saveBtn">Search</button>
+            </div>
+        </div>
+
+        <!-- current city, weather, date, temp, wind, humidity, uv index info -->
+        <div class="col-sm-8">
+            <div class="current-weather-container">
+                <div id="current-location"> Current Location:
+                    <h3 class="city">Sandy, Utah (06/03/2021)</h3>
+                    <h3 class="temp">Temp:</h3>
+                    <h3 class="wind">Wind:</h3>
+                    <h3 class="humidity">Humidity:</h3>
+                    <h3 class="uv index">UV Index:</h3>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- current city, weather, date, temp, wind, humidity, uv index info -->
-    <div class="current-weather-container">
-    </div id="current-location" style="display: grid; grid-template-columns: 1fr 1fr;"> Current Location:</div>
-    </div>
-    <!-- past search history cities -->
-    <div class="search-history-container">
-        <h2>Past Search History</h2>
-    </div>
     </div>
 
-    <!-- 5-day forecast for current city -->
+    <!--past search history cities -->
+    <div class="row clearfix">
+        <div class="col-sm-2">
+            <div class="search-history-container">
+                <h2>Past Search History:</h2>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">#</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">#</button>
+                <button type="button" class="btn btn-secondary btn-lg btn-block">#</button>
+            </div>
+        </div>
 
+
+
+        <!-- 5-day forecast for current city -->
+        <div class="col-sm-10">
+            <div id="five-day-forecast" class="panel panel-default">
+                <div class="panel-heading">
+                    <b>Extended Forecast for</b>
+                    <h2 class="panel-title">
+                        Sandy, Utah
+                    </h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tombstone-container col-sm-2">
+                    <p class="day 2">Tomorrow<br><br></p>
+                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                </div>
+                <div class="tombstone-container col-sm-2">
+                    <p class="day 2">Saturday<br><br></p>
+                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                </div>
+                <div class="tombstone-container col-sm-2">
+                    <p class="day 2">Sunday<br><br></p>
+                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                </div>
+                <div class="tombstone-container col-sm-2">
+                    <p class="day 2">Monday<br><br></p>
+                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                </div>
+                <div class="tombstone-container col-sm-2">
+                    <p class="day 2">Tuesday<br><br></p>
+                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                </div>
+            </div>
+        </div>
 
 </body>
 

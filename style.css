@@ -14,16 +14,23 @@
 
 /* search container */
 
-.search-container {
+.card-body {
     outline-style: solid;
 }
 
 
 /* current location info */
 
-.container {
+.current-weather-container {
+    padding: 15px;
     justify-content: flex-end;
+    outline-style: solid;
 }
 
 
 /* past search history */
+
+.search-history-container {
+    outline-style: solid;
+    padding: 15px;
+}
