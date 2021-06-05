@@ -34,11 +34,11 @@
         <div class="col-sm-8">
             <div class="current-weather-container">
                 <div id="current-location"> Current Location:
-                    <h3 class="city">Sandy, Utah (06/03/2021)</h3>
-                    <h3 class="temp">Temp:</h3>
+                    <h3 id="city" class="city">Sandy, Utah (06/03/2021)</h3>
+                    <h3 id="temp" class="temp">Temp:</h3>
                     <h3 class="wind">Wind:</h3>
                     <h3 class="humidity">Humidity:</h3>
-                    <h3 class="uv index">UV Index:</h3>
+                    <h3 id="uv" class="uv index">UV Index:</h3>
                 </div>
             </div>
         </div>
@@ -49,13 +49,10 @@
     <div class="row clearfix">
         <div class="col-sm-2">
             <div class="search-history-container">
-                <h2>Past Search History:</h2>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">#</button>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">#</button>
-                <button type="button" class="btn btn-secondary btn-lg btn-block">#</button>
+                <h2 class="subtitle">Past Search History:<span id="search-term"></span></h2>
+                <div id="search-history" class="list-group"></div>
             </div>
         </div>
-
 
 
         <!-- 5-day forecast for current city -->
@@ -71,27 +68,27 @@
             <div class="row">
                 <div class="tombstone-container col-sm-2">
                     <p class="day 2">Tomorrow<br><br></p>
-                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                    <p><img src="#" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
                 </div>
                 <div class="tombstone-container col-sm-2">
                     <p class="day 2">Saturday<br><br></p>
-                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                    <p><img src="#" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
                 </div>
                 <div class="tombstone-container col-sm-2">
                     <p class="day 2">Sunday<br><br></p>
-                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                    <p><img src="#" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
                 </div>
                 <div class="tombstone-container col-sm-2">
                     <p class="day 2">Monday<br><br></p>
-                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                    <p><img src="#" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
                 </div>
                 <div class="tombstone-container col-sm-2">
                     <p class="day 2">Tuesday<br><br></p>
-                    <p><img src="newimages/medium/nfew.png" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
+                    <p><img src="#" alt="Thursday: Mostly sunny" class="forecast-icon"></p>
                 </div>
             </div>
         </div>
-
+        <script src="script.js"></script>
 </body>
 
 </html>
