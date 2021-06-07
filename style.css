@@ -48,3 +48,14 @@
     padding: 15px;
     margin-left: 25px;
 }
+
+
+/* uv index color */
+
+.icon-danger {
+    color: rgb(255, 70, 70);
+}
+
+.icon-success {
+    color: rgb(29, 153, 255);
+}

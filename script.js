@@ -19,8 +19,19 @@ function clickhandler() {
         lat = weatherData.coord.lat;
         long = weatherData.coord.lon;
 
+        // set wind
+        var windElement = document.getElementById("wind");
+        var windSpeed = weatherData.wind.speed;
+        windElement.innerHTML = "Wind: " + windSpeed;
+
+        //set humidity
+        var humidityEl = document.getElementById("humidity");
+        var humidity1 = weatherData.main.humidity;
+        humidityEl.innerHTML = "Humidity: " + humidity1;
+
+        //set uvIndex
         getUvIndex(lat, long).then((uv) => {
-            console.log("uv index: " + uvIndex);
+            console.log("uv index: " + uv);
             var uvIndex = document.getElementById("uv");
             uvIndex.innerHTML = "UV Index: " + uv;
         });
@@ -32,12 +43,12 @@ function clickhandler() {
         // todo - update other parts of the page
     });
 }
-//http://api.openweathermap.org/data/2.5/weather?q=Salt%20Lake%20City,%20UT,%20USA&appid=80b3f9e346ab1ff77dba0cc32aeb9b9c
+
 //req weather data
 // Call the weather api to get weather data
 async function getWeatherData(location) {
     var apiKey = '80b3f9e346ab1ff77dba0cc32aeb9b9c';
-    const response = await fetch("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey, {});
+    const response = await fetch("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey);
     const json = await response.json();
     return json;
 }
@@ -56,6 +67,11 @@ async function getUvIndex(lat, long) {
     const json = await response.json();
     return json.current.uvi;
 }
+
+
+//populate daily forecast
+
+//populate 5 days
 
 // Set up button click handler
 var object = document.getElementById("search-btn");
