@@ -1,3 +1,4 @@
+var forecastWeatherEl = document.getElementById("wicon");
 // function to handle the search button click
 function clickhandler() {
     // read the city being searched for
@@ -36,6 +37,15 @@ function clickhandler() {
             uvIndex.innerHTML = "UV Index: " + uv;
         });
 
+        //req weather icon
+        var iconUrl = "https://openweathermap.org/img/wn/" + weatherData.weather[0].icon + "@2x.png";
+        forecastWeatherEl.setAttribute("src", iconUrl);
+
+        //if uv index is the number between 0-2 box will be green
+        //if uv index is the number between 3-5 box will be yellow
+        //if uv index is the number between 6-7 box will be orang
+        //if uv index is the number between 8-10 box will be red
+        //if uv index is 11+ the box will be purple
         getFiveDayForecast(city).then((forecast) => {
             console.log(forecast);
         });
