@@ -17,6 +17,7 @@ function clickhandler() {
         var temperature = weatherData.main.temp;
         tempHeader.innerHTML = "Temp: " + temperature;
         console.log("temp:" + temperature);
+        console.log(weatherData.main);
 
         lat = weatherData.coord.lat;
         long = weatherData.coord.lon;
@@ -76,7 +77,7 @@ function clickhandler() {
             humidity1.innerHTML = "Humidity: " + humidity;
             //weather icon
             var iconUrl = "https://openweathermap.org/img/wn/" + day1.weather[0].icon + "@2x.png";
-            var icon1 = document.getElementById("icon1");
+            var icon1 = document.getElementById("wicon1");
             icon1.setAttribute("src", iconUrl);
             //DAY 2!!!!
             var day2 = fiveDayForecast.list[2];
@@ -93,7 +94,7 @@ function clickhandler() {
             humidity2.innerHTML = "Humidity: " + humidity;
             //weather icon
             var iconUrl = "https://openweathermap.org/img/wn/" + day2.weather[0].icon + "@2x.png";
-            var icon2 = document.getElementById("icon2");
+            var icon2 = document.getElementById("wicon2");
             icon2.setAttribute("src", iconUrl);
             //DAY 3!!!!
             var day3 = fiveDayForecast.list[3];
@@ -110,7 +111,7 @@ function clickhandler() {
             humidity3.innerHTML = "Humidity: " + humidity;
             //weather icon
             var iconUrl = "https://openweathermap.org/img/wn/" + day3.weather[0].icon + "@2x.png";
-            var icon3 = document.getElementById("icon3");
+            var icon3 = document.getElementById("wicon3");
             icon3.setAttribute("src", iconUrl);
             //DAY 4!!!
             var day4 = fiveDayForecast.list[4];
@@ -127,7 +128,7 @@ function clickhandler() {
             humidity4.innerHTML = "Humidity: " + humidity;
             //weather icon
             var iconUrl = "https://openweathermap.org/img/wn/" + day4.weather[0].icon + "@2x.png";
-            var icon4 = document.getElementById("icon4");
+            var icon4 = document.getElementById("wicon4");
             icon4.setAttribute("src", iconUrl);
             //DAY 5!!!!
             var day5 = fiveDayForecast.list[5];
@@ -144,7 +145,7 @@ function clickhandler() {
             humidity5.innerHTML = "Humidity: " + humidity;
             //weather icon
             var iconUrl = "https://openweathermap.org/img/wn/" + day5.weather[0].icon + "@2x.png";
-            var icon5 = document.getElementById("icon5");
+            var icon5 = document.getElementById("wicon5");
             icon5.setAttribute("src", iconUrl);
         });
 
@@ -153,27 +154,23 @@ function clickhandler() {
     var list = document.getElementById("history");
     list.innerHTML = "";
     cities.forEach(city => {
-        var li = document.createElement("li");
+        var li = document.createElement("button");
         li.appendChild(document.createTextNode(city));
         list.appendChild(li);
     });
-
 }
 
-
-
-//req weather data
 // Call the weather api to get weather data
 async function getWeatherData(location) {
     var apiKey = '80b3f9e346ab1ff77dba0cc32aeb9b9c';
-    const response = await fetch("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&appid=" + apiKey);
+    const response = await fetch("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=imperial" + "&appid=" + apiKey);
     const json = await response.json();
     return json;
 }
 
 async function getFiveDayForecast(location) {
     var apiKey = '80b3f9e346ab1ff77dba0cc32aeb9b9c';
-    const response = await fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + location + "&appid=" + apiKey, {});
+    const response = await fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + location + "&appid=" + apiKey + "&units=imperial", {});
     const json = await response.json();
     return json;
 }
@@ -181,15 +178,11 @@ async function getFiveDayForecast(location) {
 // Call the weather api to get uv index
 async function getUvIndex(lat, long) {
     var apiKey = '80b3f9e346ab1ff77dba0cc32aeb9b9c';
-    const response = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&appid=" + apiKey, {});
+    const response = await fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + long + "&appid=" + apiKey + "&units=imperial", {});
     const json = await response.json();
     return json.current.uvi;
 }
 
-
-//populate daily forecast
-
-//populate 5 days
 
 // Set up button click handler
 var object = document.getElementById("search-btn");
