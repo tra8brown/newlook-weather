@@ -35,6 +35,22 @@ function clickhandler() {
             console.log("uv index: " + uv);
             var uvIndex = document.getElementById("uv");
             uvIndex.innerHTML = "UV Index: " + uv;
+            var uvDiv = document.getElementById("uv-div");
+
+            //color uv 
+            var color = "";
+            if (uv >= 0 && uv <= 2) {
+                color = "green";
+            } else if (uv >= 3 && uv <= 5) {
+                color = "yellow";
+            } else if (uv >= 6 && uv <= 7) {
+                color = "orange";
+            } else if (uv >= 8 && uv <= 10) {
+                color = "red";
+            } else if (uv >= 11) {
+                color = "purple";
+            }
+            uvDiv.style.backgroundColor = color;
         });
 
         //req weather icon
