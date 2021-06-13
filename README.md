@@ -4,4 +4,4 @@
 *added both live and github repositories. 
 https://tra8brown.github.io/newlook-weather/
 https://github.com/tra8brown/newlook-weather
-![Screenshot](./screenshot.png)
+![Screenshot](../screenshot.png)
