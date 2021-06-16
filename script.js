@@ -163,14 +163,14 @@ function clickhandler() {
 // Call the weather api to get weather data
 async function getWeatherData(location) {
     var apiKey = '80b3f9e346ab1ff77dba0cc32aeb9b9c';
-    const response = await fetch("http://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=imperial" + "&appid=" + apiKey);
+    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=" + location + "&units=imperial" + "&appid=" + apiKey);
     const json = await response.json();
     return json;
 }
 
 async function getFiveDayForecast(location) {
     var apiKey = '80b3f9e346ab1ff77dba0cc32aeb9b9c';
-    const response = await fetch("http://api.openweathermap.org/data/2.5/forecast?q=" + location + "&appid=" + apiKey + "&units=imperial", {});
+    const response = await fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + location + "&appid=" + apiKey + "&units=imperial", {});
     const json = await response.json();
     return json;
 }
